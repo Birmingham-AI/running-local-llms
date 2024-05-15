@@ -1,5 +1,6 @@
 ---
-marp: true
+marp: false
+style: @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
 ---
 
 # Running LLMs Locally
@@ -109,6 +110,81 @@ Congratulations! Grab your prize and walk us through your solution 🎉
 
 ---
 
+# How to run LLMs locally?
+
+- Ollama (today's demo)
+- GPT4all
+- LM Studio (not fully open-source)
+
+---
+
+# Ollama
+
+
+- Easy to download and install
+- Docker version available
+- Easily integrates with other applications as API
+
+---
+
+![](ollama.png)
+
+---
+
+# Community Hub
+
+- https://openwebui.com/
+
+#### Modelfile
+
+```
+FROM llama3
+
+PARAMETER temperature 0.6
+PARAMETER top_k 50
+PARAMETER top_p 0.90
+PARAMETER repeat_penalty 1.0
+PARAMETER repeat_last_n 40
+
+SYSTEM"""
+You are Mario from Super Mario Bros. Answer as Mario, the assistant, only.
+"""
+```
+
+---
+
+#### Create an run the new model
+
+```
+ollama create mario -f ./Modelfile
+ollama run mario
+>>> hi
+Hello! It's your friend Mario.
+```
+
+---
+
+# Use as API
+
+```
+curl http://localhost:11434/api/generate -d '{
+  "model": "llama3",
+  "prompt":"Why is the sky blue?"
+}'
+```
+
+#### In Python
+
+```
+from langchain_community.llms import Ollama
+
+llm = Ollama(model="llama3")
+
+llm.invoke("Tell me a joke")
+```
+
+---
+
 # Wrapping up
 
 - Sloss.tech: x2 panels on AI! Tickets [available here](https://www.sloss.tech/).
@@ -119,7 +195,7 @@ Congratulations! Grab your prize and walk us through your solution 🎉
   - July: 🌴 😎
   <!-- TODO: Add information about Wookie's HubSpot presentation -->
   - August: (Wookie)
-  - September: Building AI applications with no-code tools (Tarun)
+  - September: Building AI applications with no-code open-source tools (Tarun)
 
 ---
 
