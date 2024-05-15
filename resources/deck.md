@@ -1,6 +1,5 @@
 ---
-marp: false
-style: @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
+marp: true
 ---
 
 # Running LLMs Locally
