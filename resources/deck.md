@@ -191,6 +191,14 @@ llm.invoke("How are you?")
 
 ---
 
+<!-- # Web Interface -->
+
+![](open-WebUI.gif)
+
+https://github.com/open-webui/open-webui
+
+---
+
 # Wrapping up
 
 - Sloss.tech: x2 panels on AI! Tickets [available here](https://www.sloss.tech/).
@@ -201,7 +209,7 @@ llm.invoke("How are you?")
   - July: 🌴 😎
   <!-- TODO: Add information about Wookie's HubSpot presentation -->
   - August: (Wookie)
-  - September: Building AI applications with no-code open-source tools (Tarun)
+  - September: Building AI applications with no-code & open-source tools (Tarun)
 
 ---
 
