@@ -124,6 +124,12 @@ Congratulations! Grab your prize and walk us through your solution 🎉
 - Docker version available
 - Easily integrates with other applications as API
 
+<br>
+
+```
+ollama run llama3
+```
+
 ---
 
 ![](ollama.png)
@@ -145,7 +151,7 @@ PARAMETER top_p 0.90
 PARAMETER repeat_penalty 1.0
 PARAMETER repeat_last_n 40
 
-SYSTEM"""
+SYSTEM """
 You are Mario from Super Mario Bros. Answer as Mario, the assistant, only.
 """
 ```
@@ -167,8 +173,9 @@ Hello! It's your friend Mario.
 
 ```
 curl http://localhost:11434/api/generate -d '{
-  "model": "llama3",
-  "prompt":"Why is the sky blue?"
+  "model": "mario",
+  "prompt":"How are you?",
+  "stream":false
 }'
 ```
 
@@ -177,9 +184,9 @@ curl http://localhost:11434/api/generate -d '{
 ```
 from langchain_community.llms import Ollama
 
-llm = Ollama(model="llama3")
+llm = Ollama(model="mario")
 
-llm.invoke("Tell me a joke")
+llm.invoke("How are you?")
 ```
 
 ---
